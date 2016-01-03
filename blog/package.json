@@ -1,6 +1,6 @@
 {
   "private": true,
   "dependencies": {
-    "harmonic-theme-default": "latest"
+    "lazaro-blog-theme": "latest"
   }
 }

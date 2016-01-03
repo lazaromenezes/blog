@@ -6,7 +6,7 @@
     "author": "Lázaro Danillo Menezes",
     "description": "Blog onde tentarei falar de tudo um pouco",
     "bio": "Thats me",
-    "theme": "harmonic-theme-default",
+    "theme": "lazaro-blog-theme",
     "preprocessor": "stylus",
     "posts_permalink": ":language/:year/:month/:title",
     "pages_permalink": ":language/pages/:title",
@@ -16,9 +16,8 @@
     ],
     "index_posts": 10,
     "i18n": {
-        "default": "en",
+        "default": "pt-br",
         "languages": [
-            "en",
             "pt-br"
         ]
     }
