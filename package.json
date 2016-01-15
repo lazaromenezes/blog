@@ -1,23 +1,6 @@
 {
-  "name": "blog",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {
-    "harmonic": "^0.5.1"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lazaromenezes/blog.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/lazaromenezes/blog/issues"
-  },
-  "homepage": "https://github.com/lazaromenezes/blog#readme"
+  "private": true,
+  "dependencies": {
+    "lazaro-blog-theme": "latest"
+  }
 }

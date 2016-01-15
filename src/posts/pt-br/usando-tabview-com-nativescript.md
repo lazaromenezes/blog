@@ -5,7 +5,7 @@ date: 2016-01-15T02:17:00.577Z
 comments: true
 published: true
 keywords: android, nativescript, tab, tabview, arquivos separados
-description:
+description: Utilizando o componente TabView com NativeScript
 categories: desenvolvimento, android, mobile
 -->
 
