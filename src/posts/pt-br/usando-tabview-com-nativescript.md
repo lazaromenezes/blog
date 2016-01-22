@@ -1,46 +1,108 @@
 <!--
 layout: post
-title: Usando TabView com NativeScript
+title: Native Script: Separando os arquivos para o TabView
 date: 2016-01-15T02:17:00.577Z
 comments: true
 published: true
-keywords: android, nativescript, tab, tabview, arquivos separados
-description: Utilizando o componente TabView com NativeScript
-categories: desenvolvimento, android, mobile
+keywords: android, NativeScript, tab, tabview, arquivos separados, javascript, mobile
+description: Uma proposta para deixar a utilização do TabView mais limpa no NativeScript
+categories: Desenvolvimento, Android, NativeScript
 -->
 
-Nos últimos dias tenho brincado um pouco com [Native Script](nativescript.org), fazendo pequenos apps para estudo e para matar a curiosidade e, em uma dessas apps, resolvi usar o componente TabView.
+Se você já precisou utilizar o componente TabView com a framework NativeScript, deve ter notado que grande parte dos tutoriais e da documentação mostram a criação do layout toda no mesmo arquivo, como neste exemplo, extraído da documentação oficial (https://docs.nativescript.org/ApiReference/ui/tab-view/how-to.html):
 
-Para quem não conhece, o NativeScript é uma framework para o desenvolvimento de aplicativos móveis, para as plataformas Android e iOS utilizando JavaScript, ou TypeScript, XML e CSS mas que será "traduzida" para uma aplicação nativa. Para mais detalhes de como ele faz esta 'mágica', dê uma olhada na [documentação](http://docs.nativescript.org/).
+```xml
+<Page>
+ <TabView>
+   <TabView.items>
+     <TabViewItem title="Tab 1">
+       <TabViewItem.view>
+          <Label text="Label in Tab1" />
+       </TabViewItem.view>
+     </TabViewItem>
+     <TabViewItem title="Tab 2">
+       <TabViewItem.view>
+          <Label text="Label in Tab2" />
+       </TabViewItem.view>
+     </TabViewItem>
+   </TabView.items>
+ </TabView>
+</Page>
+```
+Mas, dependendo da complexidade da view que irá compor cada aba, terminaríamos com um arquivo XML muito complexo, de difícil leitura.
 
-A principal diferença do NativeScript para outras frameworks, como o Apache Cordova, é que, com o Native Script, não temos uma aplicação sendo executada dentro de um WebView ou de um browser. Toda a camada de interface com o usuário é nativa, gerada a partir dos módulos e do runtime da framework.
+Particularmente - e aqui talvez seja questão de preferência, ou gosto - gostaria que minhas abas fossem tradas como páginas separadas, tendo cada uma o seu XML e arquivos JavaScript relacionados.
 
-Como começar com o NativeScript então?
+Neste post irei demonstrar uma solução para este 'problema', inspirado por esta [thread] (https://groups.google.com/forum/#!topic/nativescript/szdHGxhmbTM).
 
-O primeiro passo, é instalar o client. Os detalhes de como proceder a instalação para o seu ambiente podem ser encontrados [neste link](http://docs.nativescript.org/start/quick-setup#the-nativescript-cli)
+O projeto completo pode ser encontrado no GitHub, neste link: LINK AQUI.
 
-Basicamente, o comando será:
+Irei começar a partir de uma aplicação feita em uma página simples e irei refatorar a mesma para que chegue no ponto em que teremos as abas em arquivos independentes.
+
+## Criando a aplicação inicial
+
+Começando com uma aplicação base e adicionando a plataforma android
+
+```shell
+$ tns create nativescript-tabview-example
+$ tns platform add android
+```
+Após criada a aplicação, alterei os arquivos main-page.xml e main-view-model.js para que fiquem conforme abaixo:
+
+#### main-page.xml
+```xml
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+
+  <Page.actionBar>
+    <ActionBar title="TabView Example" android.position="actionBar" />
+  </Page.actionBar>
+
+  <TabView>
+   <TabView.items>
+
+     <!-- Tab 1 -->
+     <TabViewItem title="Tab 1">
+       <TabViewItem.view>
+         <ListView items="{{ items }}">
+           <ListView.itemTemplate>
+             <Label text="{{ title }}" textWrap="true" />
+           </ListView.itemTemplate>
+         </ListView>
+       </TabViewItem.view>
+     </TabViewItem>
+
+     <!-- Tab 1 -->
+     <TabViewItem title="Tab 2">
+       <TabViewItem.view>
+          <Label text="{{ username }}" />
+       </TabViewItem.view>
+     </TabViewItem>
+
+   </TabView.items>
+ </TabView>
+</Page>
+```
+### main-view-model.js
+```javascript
+var observable = require("data/observable");
+
+var MainViewModel = (function (_super) {
+
+    __extends(MainViewModel, _super);
+
+    function MainViewModel() {
+        _super.call(this);
+        this.items = [{title: "Item 1"}, {title: "Item 2"}];
+        this.username = "Joe";
+    }
+
+    return MainViewModel;
+
+})(observable.Observable);
+
+exports.MainViewModel = MainViewModel;
+
+exports.mainViewModel = new MainViewModel();
 
 ```
-$ npm install -g nativescript
-```
-
-Em seguida, utlize o comando
-
-```
-$ tns doctor
-```
-
-para que seja feita uma verificação se todas as dependências estão instaladas.
-
-Você deverá ver uma saída como esta
-
-```
-$ tns doctor
-NOTE: You can develop for iOS only on Mac OS X systems.
-To be able to work with iOS devices and projects, you need Mac OS X Mavericks or later.
-
-No issues were detected.
-```
-
-Se algo saiu errado, satisfaça as dependencias necessárias para que possa prosseguir.
+![preview do primeiro estágio](/images/tabview1.png "Preview do primeiro estágio")
