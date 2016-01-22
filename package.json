@@ -1,7 +1,7 @@
 {
   "private": true,
   "dependencies": {
-    "lazaro-blog-theme": "git+https://git@github.com/lazaromenezes/lazaro-blog-theme.git",
+    "lazaro-blog-theme": "git+https://git@github.com/lazaromenezes/lazaro-blog-theme.git"
   },
   "author": "Lázaro Menezes",
   "repository": {
