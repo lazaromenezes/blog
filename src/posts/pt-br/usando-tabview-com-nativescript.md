@@ -35,7 +35,7 @@ Particularmente - e aqui talvez seja questão de preferência, ou gosto - gostar
 
 Neste post irei demonstrar uma solução para este 'problema', inspirado por esta [thread] (https://groups.google.com/forum/#!topic/nativescript/szdHGxhmbTM).
 
-O projeto completo pode ser encontrado no GitHub, neste link: LINK AQUI.
+O projeto completo pode ser encontrado no GitHub, neste link (https://github.com/lazaromenezes/nativescript-tabview-example).
 
 Irei começar a partir de uma aplicação feita em uma página simples e irei refatorar a mesma para que chegue no ponto em que teremos as abas em arquivos independentes.
 
