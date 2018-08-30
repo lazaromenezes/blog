@@ -15,5 +15,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lazaromenezes/blog.git"
+  },
+  "engines": {
+    "node": "8.11.4",
+    "npm": "6.4.1"
   }
 }
