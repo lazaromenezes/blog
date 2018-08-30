@@ -1,7 +1,11 @@
 {
   "private": true,
-  "dependencies": {
+  "devDependencies": {
+    "harmonic": "^0.5.1",
     "lazaro-blog-theme": "git+https://git@github.com/lazaromenezes/lazaro-blog-theme.git"
+  },
+  "scripts": {
+    "build": "harmonic build"
   },
   "author": "Lázaro Menezes",
   "repository": {
