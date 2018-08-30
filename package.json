@@ -4,8 +4,12 @@
     "harmonic": "^0.5.1",
     "lazaro-blog-theme": "git+https://git@github.com/lazaromenezes/lazaro-blog-theme.git"
   },
+  "dependencies": {
+    "http-server": "0.11.1"
+  },
   "scripts": {
-    "build": "harmonic build"
+    "build": "harmonic build",
+    "start": "http-server"
   },
   "author": "Lázaro Menezes",
   "repository": {
