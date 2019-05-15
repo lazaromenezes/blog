@@ -1,12 +1,22 @@
-language: node_js
-node_js:
-- '8.11.4'
+language: go
+go:
+- master
+branches:
+  only:
+    - master
+services:
+- docker
 install:
-- npm install
-script: npm run build
-deploy:
-  provider: heroku
-  skip_cleanup: true
-  api_key:
-    secure: gxRmRTpcUigpBFqH9b31j768VkuEiu0tgK0cILdCegdjaRIuEIMapfYlgi0MIafo5erhrasUVU8v0ciBFY4mnpYyRXre9l+ag+hPj28lCgQiJEcxc0ldzC0u65A5m8JM/CsL/O+nYNIiOuoebE/0DQ1GO7e46Ux5+olswm3XEHeK3/9uD3eORf8YVOBp2ZkoSnF3d5n/XHhgTR8ErM8TmsVVmygcbWe6eVMzvOa3zs5DHZ/IRLLJ9kYWPEQZbC3HT0wDgot6iXZAOXN/bfNRB1sz1BM8ewq6zv2X6xHoLqbQnX6vmFk2c45WuTPCiq5OVR8MZai2SD8HCzldZDgr8zH3ZzPmJriOUKqRxTeHhNjJ1B5kqOghC+gbNPIk2NvBN40PQf5tUgMdTN623R5cvsvZ9BTt6A4ix721LfP89Itdsj8lDjv9H7XV3RJ27UNkPReD8PWly6mNcSNC16WnMR7MBHhtjC3rmFEdpncwq2G3sW3pkArmLHoG9GGUibGMIZl5ZruiQ7ozrPPLBy7riKXHMvgu/Kk56tzcMZCW+lArZXu8n+i+jWZ6U0zxBDqL2t94/TUUB4mjgvJ8rHN0M63SG5K6TcvyTp85BAbr4FMa/+TzSngUEhP4jQP4yVggwXqN5PDPPnIqMTyTCXgPlQYaV1V4L4dMGbJHqg82Vfo=
-  app: br-com-lazarodm-blog
+- go get github.com/spf13/hugo
+script:
+- hugo
+- docker build -t lazarodm/blog .
+after_success:
+- docker login -u _ -p "$HEROKU_TOKEN" registry.heroku.com
+- docker build -t registry.heroku.com/$HEROKU_APP/web .
+- docker push registry.heroku.com/$HEROKU_APP/web
+env:
+  global:
+  - secure: AiXeqnxz4s1L2D50JXdahJ8vxpUXE2IVzCjl4k7TjFlZQ/bI98PlYojpAwiH2o9M/bG8Y4UCaJftFhQFnoV993aKRzV9e8h1egLrA+6q1+TQ7nAm6/xlnpuDagUw9CmWFws2NGnqi1ccEh1r9IB3Bs9v3BKW60BbBeITaj6QDQ3akQuu9kwYnmwdMbQEhOLBJpHgszkW9hZcqGlfKfqzEu66fRtNqeWXj0ckpokfQH0WI5Yo8hOtYAvWztp1LN5lKKXc1/ATF076bSJ7cV/SWDQ2eVBJVL93t3QLWKgibA3rRJpmzuWOMnGnyvAP+gTTvyN5sJPhE8sPZTpz4Br3keGNBClZPnfa7G+mM9cWPkyADtJHOoBmxa7JX9YXRO3KkR1yVmFZ7RYPYkY919uJ+znAsjpUZ9L3aX10Fybdw8TdSRFocXFMTZyC5eG2ttdcwSpK3oRBkVlb3J+wA1Iy0UR47AhDWcalLYWRoPyd8Id9Z5ItUAUSkFsO8J7Gd5kFDhraGHNFkXBLDwDYtTRDlPNLjFSObw/b1l2RTrTcyb5QV7K7v2FcVVGI1+PynIyJ7sIXTi5CLtCO4ffBUvPuttnnD1Jbd37ST9JMEzEb8mUh7skpUnAJKScsQo8eBmBzh1E0fq7miDTLyyRGmm048mRefmZYO4nycIjO9wUoKnc=
+  - secure: R0Qi1Flu5lW4WpmV8bHCtBCzwFerBxHAtiD6zQLoLmn3NbcGfKjomimMN4jaRuGS5UNfj4/5eNY9XeBzEq+3swKP4tEVjGA6EiK3anM9/1kMIbCcDZbX0WbQLzMWUe3dGaULFBszy4v4IlNB9zb2OsXqIemQajxUE7OpPjP43qUpz44YWKIpoIe0BqkzUZRkxyFWEPIJP+QYBACEG8NpA1pi1R1m3D6a3QOjimM1+u9YhKpvpP6fU1m+3fbN4A3he6zldJzqm3F0OLrbPe98Z0oWy3bxaW9pFNL5s5nZWgGRYHOMzQxjLevjS3YyD4LV9WtWuWmyGL7/dvVs+hpucaPEdXztAgwquax/V8su7UAz9QZWOttNAEt9Q0c3FX8SlXdmdEjywZSa/xJqjBCLgTFFoXG7sSdHOKS/Ygyg9L1OWipET/Ixs5mcy/tRP92MhGgzD4X0HpQTwt39YIrCuqJ+V4zK/gziRWXnHh/doy4rorW2w9u+KoeiMKiCzcgY0dU6dy2ywss6tDVEIknB0A4YAXNamHafv/bkp2p3p9jH6mZF1Oa+1Xl+lYicqDL4P+Nk6O1J1dWoQ5HRAb8rAjpb7sUoH3tiRy+XS3CxD+bC0P3bxRiDnlqfyOZk000TNvfygNObY9GxsgD2Ijy0Zw2y+tjXUZly8XgoE08Pwjg=
+
