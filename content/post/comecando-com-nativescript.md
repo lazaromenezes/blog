@@ -1,13 +1,10 @@
-<!--
-layout: post
-title: Começando com NativeScript
-date: 2016-01-22T01:08:00.497Z
-comments: true
-published: false
-keywords:
-description:
-categories:
--->
++++
+author  = "Lázaro Menezes"
+title   = "Começando com NativeScript"
+date = "2016-01-22T01:08:00-03:00"
+noindex = false
+draft   = true
++++
 
 Nos últimos dias tenho brincado um pouco com [NativeScript](nativescript.org), fazendo pequenos apps para estudo e para matar a curiosidade e, em uma dessas apps, resolvi usar o componente TabView.
 
