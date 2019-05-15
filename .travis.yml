@@ -12,7 +12,6 @@ install:
   - export PATH=$PATH:$PWD
 script:
 - hugo
-- docker build -t lazarodm/blog .
 after_success:
 - docker login -u _ -p "$HEROKU_API_KEY" registry.heroku.com
 - docker build -t registry.heroku.com/$HEROKU_APP/web .
