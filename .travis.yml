@@ -6,6 +6,7 @@ branches:
 services:
 - docker
 install:
+- wget -qO- https://toolbelt.heroku.com/install.sh | sh
 - wget https://github.com/gohugoio/hugo/releases/download/v0.55.5/hugo_0.55.5_Linux-64bit.tar.gz
 - tar -xzvf hugo_0.55.5_Linux-64bit.tar.gz
 - chmod +x hugo
@@ -13,9 +14,11 @@ install:
 script:
 - hugo
 after_success:
-- docker login -u _ -p "$HEROKU_API_KEY" registry.heroku.com
-- docker build -t registry.heroku.com/br-com-lazarodm-blog/web .
-- docker push registry.heroku.com/br-com-lazarodm-blog/web
+- echo "$HEROKU_API_KEY" | docker login -u _ --pasword-stdin registry.heroku.com
+- docker build -t registry.heroku.com/$HEROKU_APP_NAME/web .
+- docker push registry.heroku.com/$HEROKU_APP_NAME/web
+- heroku container:release web --app $HEROKU_APP_NAME
 env:
   global:
-    secure: Vfyhyx3r08MwiiB+pF1qcm0lnNYRyJpzmB9/LZ8oibN/irG7Xyrj3VGiKxHLJPOnmoeNpuzpYqK0lrD7E4QOUwNHK5EuVmYlk1JUdM7EH7Rs6Bx+WNCbcqpwAch7a5UJaODGScsyNXBhSkKy71sCXvZycjFyTgtr8YoGhubl+gDDF2zd9D0MTzwRILAGSetujf3TVY43hwrcBhyUME2e566WwgXGNw+Ob/KUCKcISojLXTiW5rzEcFtVoFM6vqeq/9Wqsqz4QYgMCZdDxWN1ehxCDsr6bMQJ3T3qy7EoUDP2Zo+/U62r6mwSo6nTZzZIgHTtVzRQ4N/2/Y0NmBcGM14sgU+C6AzkghWL0q14fK6Kz8f7k5f7Qh8KCCoEEB1NRv4dsvDwItngEQSVB2CAJ8ORQG2OxRkeGyXM2tfkQ+38psEEk5vxDS2ubXKc9i4ZQKd3Rv91wsKXZluKUvqpAat6YxmvTVDyylCFfqxtywpZf2BqD5EYuzKzGwVHEBIq/Zni4VulyRRYkOEWoIRTB8omTACKmFb80bCpP8jwGOUutvXQPaXzHFwD+ez92dxPV0KLZ9AJJ2rBwfKMPaQsiwUlE4gkdBiA77OBlzxmp5DCrs4X1hxthaNZjEfKStkD4BXOQ8w5kZvOWCy0TTc1bsXv4leB/w8uSUXyk1B7GdA=
+  - secure: Vfyhyx3r08MwiiB+pF1qcm0lnNYRyJpzmB9/LZ8oibN/irG7Xyrj3VGiKxHLJPOnmoeNpuzpYqK0lrD7E4QOUwNHK5EuVmYlk1JUdM7EH7Rs6Bx+WNCbcqpwAch7a5UJaODGScsyNXBhSkKy71sCXvZycjFyTgtr8YoGhubl+gDDF2zd9D0MTzwRILAGSetujf3TVY43hwrcBhyUME2e566WwgXGNw+Ob/KUCKcISojLXTiW5rzEcFtVoFM6vqeq/9Wqsqz4QYgMCZdDxWN1ehxCDsr6bMQJ3T3qy7EoUDP2Zo+/U62r6mwSo6nTZzZIgHTtVzRQ4N/2/Y0NmBcGM14sgU+C6AzkghWL0q14fK6Kz8f7k5f7Qh8KCCoEEB1NRv4dsvDwItngEQSVB2CAJ8ORQG2OxRkeGyXM2tfkQ+38psEEk5vxDS2ubXKc9i4ZQKd3Rv91wsKXZluKUvqpAat6YxmvTVDyylCFfqxtywpZf2BqD5EYuzKzGwVHEBIq/Zni4VulyRRYkOEWoIRTB8omTACKmFb80bCpP8jwGOUutvXQPaXzHFwD+ez92dxPV0KLZ9AJJ2rBwfKMPaQsiwUlE4gkdBiA77OBlzxmp5DCrs4X1hxthaNZjEfKStkD4BXOQ8w5kZvOWCy0TTc1bsXv4leB/w8uSUXyk1B7GdA=
+  - secure: j0/2IZmOVQQuKf2WJW01lgUxE8DB3Iy4jSF/vL+aAq/QyywcX9P1wvF3M4W+Sjr5X2fy82fTfSpk0UP4rbiUVTZEEFPfRwDk4VSNeJ9Q8/Dbtev0FW7+//iMF57psSZYeoIEqQhE3deYEWdaBYCZ+sbdUQgLS3Z/DyLS3dXN3vBIvI96YSZJY2lhK5am1JqqEcvaJhxJSxg8m4vtH1QU6/2NgMgWhyGTRV8wVRLuwxNkRVwmXDhhPED+DAqBN5HGdnFg/oRlj61MZqehY8qwJupy6lX4K/tyAQe3Zoom41HjL2u3lW6X3ow/CcCYpJZkjzS5jwBNCwIH/Y78pP7KxrNMiKoIqug5TTq/U7fNi9sIMJesWiY+4TNFSqTVGL93bXvUF0pb7dvRyJTRQW0t4zz5S3KfsShAsjosCI8eeL3uBrOboLUL3FQSr+ayGMPJIK+UGU6EYJr2XFKAbRVNPRUaKUdwjbg1n7S6GUvrg9BbvsxEZxo02/b7X9/LaXRvRXUvTuCzTHRUPWJ3MFRPBWpRc6YpxXwTqEsrapc/1TCv2NOkxPB8A08ghKP/HCXgkJe7E0WDXJo1WONrZyMHQh0arDAL5WHBCRvl1FIVaO9LoSjdOTVEEUzvTXmba5+yfirzWoTBohJ0zO7yfroU4rhxkbe98AP8oWJx7V7ZjKY=
