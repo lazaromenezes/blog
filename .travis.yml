@@ -1,6 +1,4 @@
-language: go
-go:
-- master
+language: generic
 branches:
   only:
   - master
@@ -8,7 +6,10 @@ branches:
 services:
 - docker
 install:
-- go get github.com/gohugoio/hugo
+  - wget https://github.com/gohugoio/hugo/releases/download/v0.55.5/hugo_0.55.5_Linux-64bit.tar.gz
+  - tar -xzvf hugo_0.55.5_Linux-64bit.tar.gz
+  - chmod +x hugo
+  - export PATH=$PATH:$PWD
 script:
 - hugo
 - docker build -t lazarodm/blog .
