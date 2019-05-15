@@ -6,10 +6,10 @@ branches:
 services:
 - docker
 install:
-  - wget https://github.com/gohugoio/hugo/releases/download/v0.55.5/hugo_0.55.5_Linux-64bit.tar.gz
-  - tar -xzvf hugo_0.55.5_Linux-64bit.tar.gz
-  - chmod +x hugo
-  - export PATH=$PATH:$PWD
+- wget https://github.com/gohugoio/hugo/releases/download/v0.55.5/hugo_0.55.5_Linux-64bit.tar.gz
+- tar -xzvf hugo_0.55.5_Linux-64bit.tar.gz
+- chmod +x hugo
+- export PATH=$PATH:$PWD
 script:
 - hugo
 after_success:
@@ -18,4 +18,4 @@ after_success:
 - docker push registry.heroku.com/br-com-lazarodm-blog/web
 env:
   global:
-  - secure: R0Qi1Flu5lW4WpmV8bHCtBCzwFerBxHAtiD6zQLoLmn3NbcGfKjomimMN4jaRuGS5UNfj4/5eNY9XeBzEq+3swKP4tEVjGA6EiK3anM9/1kMIbCcDZbX0WbQLzMWUe3dGaULFBszy4v4IlNB9zb2OsXqIemQajxUE7OpPjP43qUpz44YWKIpoIe0BqkzUZRkxyFWEPIJP+QYBACEG8NpA1pi1R1m3D6a3QOjimM1+u9YhKpvpP6fU1m+3fbN4A3he6zldJzqm3F0OLrbPe98Z0oWy3bxaW9pFNL5s5nZWgGRYHOMzQxjLevjS3YyD4LV9WtWuWmyGL7/dvVs+hpucaPEdXztAgwquax/V8su7UAz9QZWOttNAEt9Q0c3FX8SlXdmdEjywZSa/xJqjBCLgTFFoXG7sSdHOKS/Ygyg9L1OWipET/Ixs5mcy/tRP92MhGgzD4X0HpQTwt39YIrCuqJ+V4zK/gziRWXnHh/doy4rorW2w9u+KoeiMKiCzcgY0dU6dy2ywss6tDVEIknB0A4YAXNamHafv/bkp2p3p9jH6mZF1Oa+1Xl+lYicqDL4P+Nk6O1J1dWoQ5HRAb8rAjpb7sUoH3tiRy+XS3CxD+bC0P3bxRiDnlqfyOZk000TNvfygNObY9GxsgD2Ijy0Zw2y+tjXUZly8XgoE08Pwjg=
+    secure: Vfyhyx3r08MwiiB+pF1qcm0lnNYRyJpzmB9/LZ8oibN/irG7Xyrj3VGiKxHLJPOnmoeNpuzpYqK0lrD7E4QOUwNHK5EuVmYlk1JUdM7EH7Rs6Bx+WNCbcqpwAch7a5UJaODGScsyNXBhSkKy71sCXvZycjFyTgtr8YoGhubl+gDDF2zd9D0MTzwRILAGSetujf3TVY43hwrcBhyUME2e566WwgXGNw+Ob/KUCKcISojLXTiW5rzEcFtVoFM6vqeq/9Wqsqz4QYgMCZdDxWN1ehxCDsr6bMQJ3T3qy7EoUDP2Zo+/U62r6mwSo6nTZzZIgHTtVzRQ4N/2/Y0NmBcGM14sgU+C6AzkghWL0q14fK6Kz8f7k5f7Qh8KCCoEEB1NRv4dsvDwItngEQSVB2CAJ8ORQG2OxRkeGyXM2tfkQ+38psEEk5vxDS2ubXKc9i4ZQKd3Rv91wsKXZluKUvqpAat6YxmvTVDyylCFfqxtywpZf2BqD5EYuzKzGwVHEBIq/Zni4VulyRRYkOEWoIRTB8omTACKmFb80bCpP8jwGOUutvXQPaXzHFwD+ez92dxPV0KLZ9AJJ2rBwfKMPaQsiwUlE4gkdBiA77OBlzxmp5DCrs4X1hxthaNZjEfKStkD4BXOQ8w5kZvOWCy0TTc1bsXv4leB/w8uSUXyk1B7GdA=
