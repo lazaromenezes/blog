@@ -1,5 +1,5 @@
 title = "Lazaro's Blog"
-baseURL = "http://lazarodm.com.br"
+baseURL = "/"
 languageCode = "en-us"
 theme = "ananke"
 
