@@ -8,7 +8,7 @@ branches:
 services:
 - docker
 install:
-- go get github.com/spf13/hugo
+- go get github.com/gohugoio/hugo
 script:
 - hugo
 - docker build -t lazarodm/blog .
