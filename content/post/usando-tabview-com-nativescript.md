@@ -3,7 +3,6 @@ author  = "Lázaro Menezes"
 title   = "Native Script: Separando os arquivos para o TabView"
 date    = "2016-01-15T02:17:00-03:00"
 noindex = false
-draft   = true
 +++
 
 Se você já precisou utilizar o componente TabView com a framework NativeScript, deve ter notado que grande parte dos tutoriais e da documentação mostram a criação do layout toda no mesmo arquivo, como neste exemplo, extraído da documentação oficial (https://docs.nativescript.org/ApiReference/ui/tab-view/how-to.html):
