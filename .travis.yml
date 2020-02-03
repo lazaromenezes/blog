@@ -2,7 +2,6 @@ language: generic
 branches:
   only:
   - master
-  - hugo
 services:
 - docker
 install:
