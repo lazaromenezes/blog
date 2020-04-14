@@ -1,0 +1,35 @@
+baseURL: /
+theme: ananke
+MetaDataFormat: yaml
+SectionPagesMenu: main
+Paginate: 10
+googleAnalytics: ''
+enableRobotsTXT: true
+
+# Language
+defaultContentLanguage: pt-br 
+languages:
+  pt-BR:
+    title: Blog do Lalão
+    weight: 0
+    contentDir: content/pt-br
+
+sitemap:
+  changefreq: monthly
+  priority: 0.5
+  filename: sitemap.xml
+
+params:
+  favicon: ''
+  description: ''
+  facebook: ''
+  twitter: ''
+  instagram: 'https://www.instagram.com/lazarodanillomenezes'
+  youtube: ''
+  github: 'https://www.github.com/lazaromenezes'
+  gitlab: ''
+  linkedin: 'https://www.linkedin.com/in/lazarodm'
+  mastodon: ''
+  background_color_class: bg-black
+  featured_image: /images/hero/IMG_8875.jpg
+  recent_posts_number: 5
