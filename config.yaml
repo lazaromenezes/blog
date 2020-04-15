@@ -34,3 +34,4 @@ params:
   featured_image: /images/hero/IMG_8875.jpg
   recent_posts_number: 5
   post_content_classes: sans-serif
+  show_reading_time: true
