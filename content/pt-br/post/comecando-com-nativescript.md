@@ -1,8 +1,15 @@
 ---
 author: Lázaro Menezes
 date: "2016-01-22T01:08:00-03:00"
-noindex: false
 title: Começando com NativeScript
+disable_share: false
+draft: false
+featured_image: images/colorful-code.jpg
+tags:
+- NativeScript
+- Mobile
+- Development
+toc: false
 ---
 
 Nos últimos dias tenho brincado um pouco com [NativeScript](nativescript.org), fazendo pequenos apps para estudo e para matar a curiosidade e, em uma dessas apps, resolvi usar o componente TabView.
@@ -17,13 +24,13 @@ O primeiro passo é instalar o client do NativeScript. Os detalhes de como proce
 
 Basicamente, o comando será:
 
-```
+```shell
 $ npm install -g nativescript
 ```
 
 Em seguida, utlize o comando
 
-```
+```shell
 $ tns doctor
 ```
 
@@ -31,7 +38,7 @@ para que seja feita uma verificação se todas as dependências estão instalada
 
 Você deverá ver uma saída como esta
 
-```
+```shell
 $ tns doctor
 NOTE: You can develop for iOS only on Mac OS X systems.
 To be able to work with iOS devices and projects, you need Mac OS X Mavericks or later.
@@ -45,8 +52,12 @@ Se algo saiu errado, satisfaça as dependencias necessárias para que possa pros
 
 Para criar a aplicação, digite o seguinte comando:
 
-```
+```shell
 $ tns create tabViewTest
 ```
 
-Isto irá criar um novo diretório chamado tabViewTest, que conterá o projeto.
+Isto irá criar um novo diretório chamado _tabViewTest_, que conterá o projeto.
+
+------------------------------
+
+<p style="font-size:12px;font-family:sans-serif">[Free photo 84917813 © creativecommonsstockphotos - Dreamstime.com](https://www.dreamstime.com/colorful-computer-programing-code-monitor-public-domain-image-free-84917813) - © Creative Commons Zero (CC0)</p>
