@@ -11,7 +11,7 @@ install:
 - chmod +x hugo
 - export PATH=$PATH:$PWD
 script:
-- hugo -e production
+- HUGO_ENV="production" hugo
 after_success:
 - echo "$HEROKU_API_KEY" | docker login -u _ --password-stdin registry.heroku.com
 - docker build -t registry.heroku.com/$HEROKU_APP_NAME/web .

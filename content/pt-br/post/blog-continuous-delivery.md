@@ -74,10 +74,10 @@ A última linha nesta sessão serve para que o diretório em que estas ferrament
 
 ```yaml
 script:
-- hugo -e production
+- HUGO_ENV=PRODUCTION hugo
 ```
 
-Esta sessão é o "build" em si. Neste momento o site será gerado. A flag `-e production` serve para informar qual o ambiente para que algumas configurações sejam feitas.
+Esta sessão é o "build" em si. Neste momento o site será gerado. A variável ```HUGO_ENV``` serve para informar qual o ambiente para que algumas configurações sejam feitas.
 
 ```yaml
 after_success:
