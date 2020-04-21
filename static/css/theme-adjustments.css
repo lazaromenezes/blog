@@ -1,0 +1,33 @@
+a {
+  text-decoration: none;
+}
+
+article p{
+  font-family: Roboto, Helvetica, Tahoma, sans-serif;
+  text-align: justify;
+}
+
+article header, article h1, article h2, article h3{
+  font-family: Roboto, Helvetica, Tahoma, sans-serifi !important;
+}
+
+article footer.image-credits{
+  border-top: #dfdfdf 1px dashed;
+  font-size: 12px !important;
+  margin: 0;
+  padding: 0;
+}
+
+article footer.image-credits a{
+  color:#357edd;
+  transition:color .15s ease-in
+}
+
+article footer.image-credits a:focus, article footer.image-credits a:hover{
+  color:#96ccff;
+  transition:color .15s ease-in
+}
+
+article ul li.list{
+  display: inline-block
+}

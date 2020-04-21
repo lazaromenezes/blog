@@ -5,6 +5,7 @@ title: 'Native Script: Separando os arquivos para o TabView'
 disable_share: false
 draft: false
 featured_image: images/colorful-code.jpg
+featured_image_credits: "[Free photo 84917813 © creativecommonsstockphotos - Dreamstime.com](https://www.dreamstime.com/colorful-computer-programing-code-monitor-public-domain-image-free-84917813) - © Creative Commons Zero (CC0)"
 tags:
 - NativeScript
 - Mobile
@@ -282,7 +283,3 @@ exports.MainViewModel = MainViewModel;
 
 exports.mainViewModel = new MainViewModel();
 ``` 
-
-------------------------------
-
-<p style="font-size:12px;font-family:sans-serif">[Free photo 84917813 © creativecommonsstockphotos - Dreamstime.com](https://www.dreamstime.com/colorful-computer-programing-code-monitor-public-domain-image-free-84917813) - © Creative Commons Zero (CC0)</p>

@@ -4,11 +4,13 @@ date: "2020-04-13T21:07:12-03:00"
 draft: false
 title: Como configurei Continuous Delivery para este blog...
 description: ...ou "Como usar uma bazuca pra matar uma formiga"
-disable_share: true
+disable_share: false
 tags: 
     - Continuous Delivery
     - DevOps
 featured_image: images/delivery-cartoon.svg
+featured_image_credits: "['File:Delivery and Shipping Guys Cartoon.svg'](https://commons.wikimedia.org/w/index.php?curid=69760875) by [Free Clip Art](https://vectortoons.com/free-stuff/) is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0?ref=ccsearch&atype=html')"
+toc: false
 ---
 
 Este blog nunca teve muito conteúdo, ou conteúdo nenhum, pra ser sincero. O principal motivo é que passo muito mais tempo fuçando em configurações, ferramentas, templates e outras coisas ao invés de realmente escrever.
@@ -103,9 +105,3 @@ Estas variáveis foram adicionadas ao arquivo utilizando o _CLI_ do próprio Tra
 Bom, é isso. Quando tudo corre bem, toda vez que um código novo é integrado no branch master, dentro de poucos minutos a imagem está rodando no Heroku e o novo post, ou página, no ar.
 
 Outros experimentos estão para acontecer, como colocar uma etapa de testes automatizados e também um ambiente de _staging_ onde conseguiria testar novas configurações sem que tenha que mudar o site oficial mas...quem sabe um dia ;)
-
-----------------------------------
-
-<p style="font-size: 12px;font-style: italic; font-family: sans-serif">Créditos da imagem de capa</p>
-
-<p style="font-size: 12px;font-style: italic; font-family: sans-serif"><a href="https://commons.wikimedia.org/w/index.php?curid=69760875">"File:Delivery and Shipping Guys Cartoon.svg"</a><span> by <a href="https://vectortoons.com/free-stuff/">Free Clip Art</a></span> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0?ref=ccsearch&atype=html" style="margin-right: 5px;">CC BY-SA 4.0</a></p>

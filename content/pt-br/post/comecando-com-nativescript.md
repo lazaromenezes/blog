@@ -5,6 +5,7 @@ title: Começando com NativeScript
 disable_share: false
 draft: false
 featured_image: images/colorful-code.jpg
+featured_image_credits: "[Free photo 84917813 © creativecommonsstockphotos - Dreamstime.com](https://www.dreamstime.com/colorful-computer-programing-code-monitor-public-domain-image-free-84917813) - © Creative Commons Zero (CC0)"
 tags:
 - NativeScript
 - Mobile
@@ -58,6 +59,3 @@ $ tns create tabViewTest
 
 Isto irá criar um novo diretório chamado _tabViewTest_, que conterá o projeto.
 
-------------------------------
-
-<p style="font-size:12px;font-family:sans-serif">[Free photo 84917813 © creativecommonsstockphotos - Dreamstime.com](https://www.dreamstime.com/colorful-computer-programing-code-monitor-public-domain-image-free-84917813) - © Creative Commons Zero (CC0)</p>

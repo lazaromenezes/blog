@@ -1,0 +1,7 @@
+{{ $featured_image_credits := .Params.featured_image_credits }}
+{{ if $featured_image_credits }}
+  <footer class='image-credits'>
+    <p>{{ $featured_image_credits | markdownify }}</p>
+  </footer>
+{{ end }}
+
