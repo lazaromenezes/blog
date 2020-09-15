@@ -35,6 +35,7 @@ params:
   instagram: 'https://www.instagram.com/lazarodanillomenezes'
   github: 'https://www.github.com/lazaromenezes'
   linkedin: 'https://www.linkedin.com/in/lazarodm'
+  twitter: 'https://twitter.com/lazarodmenezes'
   background_color_class: bg-black
   featured_image: /images/hero/IMG_8875.jpg
   recent_posts_number: 5
