@@ -19,6 +19,10 @@ languages:
     title: Blog do Lalão
     weight: 0
     contentDir: content/pt-br
+  en:
+    title: Lazaro's Blog
+    weight: 0
+    contentDir: content/en
 
 sitemap:
   changefreq: monthly
