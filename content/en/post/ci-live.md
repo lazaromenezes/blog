@@ -2,7 +2,7 @@
 author: Lázaro Menezes
 date: "2020-07-20T16:00:00-03:00"
 draft: false
-title: Introdução à Integração Contínua - UFPR Jandaia do Sul 
+title: CI Introduction - UFPR Jandaia do Sul 
 description: 
 disable_share: false
 tags: 
@@ -13,6 +13,6 @@ featured_image_credits: "['Introduction to CI/CD with GitLab'](https://docs.gitl
 toc: false
 ---
 
-No dia 07/08/2020 tive o prazer de falar sobre integração contínua para os alunos da UFPR a pedido da professora, e minha amiga, Helena Macedo. Segue abaixo a gravação da live:
+August 07th, 2020 I had the pleasure to give some words about Continuous Integration to some UFPR (_Paraná Federal University_) students after teacher, and my friend, Helena Macedo kind invite. You can check the recording below. (Portuguese audio)
 
 {{< youtube id="tVG3tbxNqa8" autoplay="false" >}}
