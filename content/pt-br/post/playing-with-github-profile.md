@@ -12,7 +12,7 @@ description: ""
 featured_image: images/playing-with-github-profile/lazaromenezes.png
 ---
 
-Há alguns meses o GitHub lançou um recurso que permite aos usuários customizar sua página de perfil, adicionando mais detalhes do que no campo 'bio'.
+Há alguns meses o Github lançou um recurso que permite aos usuários customizar sua página de perfil, adicionando mais detalhes do que no campo 'bio'.
 
 Para isto, basta apenas que criarmos um repositório com o nosso nome de usuário e adicionar um arquivo README.md a este repositório que o conteúdo deste arquivo será exibido na sua página de perfil, acima da lista de repositórios populares, como podem ver na imagem abaixo:
 
@@ -69,5 +69,5 @@ Em um próximo artigo falarei mais sobre a [Image API](https://github.com/lazaro
 O próximo passo para o perfil é automatizar criação a lista de posts recentes, fique ligado ;)
 
 [lazaromenezes]:/images/playing-with-github-profile/lazaromenezes.png "Meu perfil no Github"
-[arturssmirnovs]:/images/playing-with-github-profile/arturssmirnovs.png "Arturs Smirnovs's profile"
-[jonathangin52]:/images/playing-with-github-profile/jonathangin52.png "Jonathan Gin's profile" 
+[arturssmirnovs]:/images/playing-with-github-profile/arturssmirnovs.png "O perfil do Arturs Smirnovs no Github"
+[jonathangin52]:/images/playing-with-github-profile/jonathangin52.png "O perfil do Jonathan Gin no Github" 
