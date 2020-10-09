@@ -14,4 +14,4 @@ toc: false
 
 > ...a good DevOps adoption strategy will help your business in more than one aspect, from faster product deployment to making your employees happier and more productive.
 
-Dê uma olhadinha no artigo que escrevi para a Actminds: [Improving Your Business With DevOps](https://www.actminds.com/blog/improving-your-business-with-devops/).
+Check out the Article I wrote for Actminds: [Improving Your Business With DevOps](https://www.actminds.com/blog/improving-your-business-with-devops/).
