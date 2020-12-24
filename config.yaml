@@ -3,7 +3,7 @@ theme: ananke
 MetaDataFormat: yaml
 SectionPagesMenu: main
 Paginate: 10
-googleAnalytics: G-ZKM2Z7SXPD  
+googleAnalytics: UA-163694959-1
 enableRobotsTXT: true
 disqusShortName: lazarodm
 
