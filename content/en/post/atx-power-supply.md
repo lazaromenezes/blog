@@ -10,6 +10,7 @@ tags:
 - ATX Power Supply
 featured_image: images/atx-power-supply/pexels-pixabay-326461.jpg
 featured_image_credits: "[Pixbay](https://www.pexels.com/pt-br/foto/aprendizado-de-maquina-atual-ciclo-circuito-326461/)"
+toc: true
 ---
 
 New year, new hobby!
@@ -86,11 +87,11 @@ Check up the folloing references I used for building this bench power supply
 [grey]:/images/atx-power-supply/grey.jpg "Wiring the LED"
 [all]:/images/atx-power-supply/all.jpg "All wired"
 
-[01]:/images/atx-power-supply/01.jpg "Wiring the LED"
-[02]:/images/atx-power-supply/02.jpg "Wiring the LED"
-[03]:/images/atx-power-supply/03.jpg "Wiring the LED"
-[04]:/images/atx-power-supply/04.jpg "Wiring the LED"
-[05]:/images/atx-power-supply/05.jpg "Wiring the LED"
-[06]:/images/atx-power-supply/06.jpg "Wiring the LED"
-[07]:/images/atx-power-supply/07.jpg "Wiring the LED"
-[08]:/images/atx-power-supply/08.jpg "Wiring the LED"
+[01]:/images/atx-power-supply/01.jpg "Top design"
+[02]:/images/atx-power-supply/02.jpg "Rear design"
+[03]:/images/atx-power-supply/03.jpg "Bournes added"
+[04]:/images/atx-power-supply/04.jpg "Cutting"
+[05]:/images/atx-power-supply/05.jpg "ATX source fixed"
+[06]:/images/atx-power-supply/06.jpg "Wiring"
+[07]:/images/atx-power-supply/07.jpg "Top view with bournes, switch and LED"
+[08]:/images/atx-power-supply/08.jpg "Final result"
