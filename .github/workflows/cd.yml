@@ -1,0 +1,35 @@
+name: Blog CD
+
+on:
+  push:
+    branches:
+      - master 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code checkout
+        uses: actions/checkout@v2
+
+      - name: Install Heroku
+        run: wget -qO- https://toolbelt.heroku.com/install.sh | sh
+
+      - name: Install HUGO
+        run: |
+          wget https://github.com/gohugoio/hugo/releases/download/v0.55.5/hugo_0.55.5_Linux-64bit.tar.gz
+          tar -xzvf hugo_0.55.5_Linux-64bit.tar.gz
+          chmod +x hugo
+          export PATH=$PATH:$PWD
+
+      - name: Build blog
+        run: HUGO_ENV="prodution" hugo
+
+      - name: Build Docker Image
+        run: docker build -t registry.heroku.com/${{secrets.HEROKU_APP_NAME}}/web .
+
+      - name: Push site to Heroku
+        run: |
+          echo "${{secrets.HEROKU_API_KEY}}" | docker login -u _ --password-stdin registry.heroku.com
+          docker push registry.heroku.com/${{secrets.HEROKU_APP_NAME}}/web
+          heroku container:release web --app ${{secrets.HEROKU_APP_NAME}}
