@@ -11,13 +11,22 @@ jobs:
     steps:
       - name: Code checkout
         uses: actions/checkout@v2
-        with:
-          submodules: true
+
+      - name: Install Heroku
+        run: wget -qO- https://toolbelt.heroku.com/install.sh | sh
+
+      - name: Build and publish
+        run: |
+          wget https://github.com/gohugoio/hugo/releases/download/v0.80.0/hugo_0.80.0_Linux-64bit.tar.gz
+          tar -xzvf hugo_0.80.0_Linux-64bit.tar.gz
+          chmod +x ./hugo
+
+      - name: Build blog
+        run: HUGO_ENV="prodution" ./hugo
 
       - name: Build and Push image 
-        uses: akhileshns/heroku-deploy@v3.8.9
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: br-com-lazarodm-blog
-          heroku_email: lazarodm@gmail.com
-          usedocker: true
+        run: |
+          echo ${{secrets.HEROKU_API_KEY}} | docker login -u _ --password-stdin registry.heroku.com
+          docker build -t registry.heroku.com/br-com-lazarodm-blog/web .
+          docker push registry.heroku.com/br-com-lazarodm-blog/web
+          heroku container:release web --app br-com-lazarodm-blog
