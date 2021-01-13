@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install Heroku
-        run: 
+        run: wget -qO- https://toolbelt.heroku.com/install.sh | sh
 
       - name: Build and publish
         run: |
