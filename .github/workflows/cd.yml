@@ -21,7 +21,7 @@ jobs:
           chmod +x ./hugo
 
       - name: Build blog
-        run: HUGO_ENV="prodution" ./hugo
+        run: HUGO_ENV="production" ./hugo
 
       - name: Build and Push Image
         uses: akhileshns/heroku-deploy@v3.8.9
