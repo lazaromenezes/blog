@@ -30,3 +30,7 @@ jobs:
           heroku_app_name: br-com-lazarodm-blog
           heroku_email: lazarodm@gmail.com
           usedocker: true
+
+      - name: Dispatch repository upload
+        run: |
+          curl -u lazaromenezes:${{secrets.ACCESS_TOKEN}} -X POST -d '{"event_type":"blog_deployed"}' https://api.github.com/repos/lazaromenezes/lazaromenezes/dispatches
