@@ -60,7 +60,7 @@ Isso pode ser feito assim:
 ![](http://images.lazarodm.com.br/image/fortune?fontSize=15)
 ```
 
-Esta API para imagens consome a [Fortune Cookie API](http://fortunecookieapi.herokuapp.com/), que provê, entre outra coisas, as mensagens de biscoito da sorte.
+Esta API para imagens consome a ~[Fortune Cookie API](http://fortunecookieapi.herokuapp.com/)~ [Fortune API](https://github.com/lazaromenezes/fortune-api), que provê as mensagens de biscoito da sorte.
 
 Em um próximo artigo falarei mais sobre a [Image API](https://github.com/lazaromenezes/image-api), que está em estágios bem iniciais, mas penso em adicionar novos recursos. (Pull requests são bem vindos :))
 

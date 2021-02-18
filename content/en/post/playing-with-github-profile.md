@@ -57,7 +57,7 @@ You can use it, like this:
 ![](http://images.lazarodm.com.br/image/fortune?fontSize=15)
 ```
 
-This API makes use of [Fortune Cookie API](http://fortunecookieapi.herokuapp.com/), that provides, among other things, the fortune cookie messages.
+This API makes use of ~[Fortune Cookie API](http://fortunecookieapi.herokuapp.com/)~ [Fortune API](https://github.com/lazaromenezes/fortune-api), that provides the fortune cookie messages.
 
 I'll talk more about the [Image API](https://github.com/lazaromenezes/image-api) in a next article. The API is still in its early stages, but I think to add new features to it. (Pull requests are welcome :))
 
