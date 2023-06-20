@@ -34,12 +34,40 @@ jobs:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     steps:
+      - name: 'Login to Azure'
+        uses: 'azure/login@v1'
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Set Web App ACR authentication
+        uses: Azure/appservice-settings@v1
+        with:
+         app-name: ${{ env.AZURE_WEBAPP_NAME }}
+         app-settings-json: |
+           [
+               {
+                   "name": "DOCKER_REGISTRY_SERVER_PASSWORD",
+                   "value": "${{ secrets.REGISTRY_PASSWORD }}",
+                   "slotSetting": false
+               },
+               {
+                   "name": "DOCKER_REGISTRY_SERVER_URL",
+                   "value": "${{ secrets.REGISTRY_LOGIN_SERVER }}",
+                   "slotSetting": false
+               },
+               {
+                   "name": "DOCKER_REGISTRY_SERVER_USERNAME",
+                   "value": "${{ secrets.REGISTRY_USERNAME }}",
+                   "slotSetting": false
+               }               
+           ]
+    
       - name: 'Deploy to Web App'
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          #publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           images: ${{ secrets.REGISTRY_LOGIN_SERVER }}/blog:${{ github.sha }}
     
   post-deploy:
