@@ -46,6 +46,7 @@ jobs:
           registry-username: ${{ secrets.REGISTRY_USERNAME }}
           registry-password: ${{ secrets.REGISTRY_PASSWORD }}
           name: blog-container-group
+          environment-variables: PORT=80
           location: 'brazil south'
     
   post-deploy:
