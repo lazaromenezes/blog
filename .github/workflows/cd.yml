@@ -31,16 +31,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'Deploy to Azure Container Instances'
-            uses: 'azure/aci-deploy@v1'
-            with:
-              resource-group: ${{ secrets.RESOURCE_GROUP }}
-              dns-name-label: 'blog' 
-              image: ${{ secrets.REGISTRY_LOGIN_SERVER }}/blog:${{ github.sha }}
-              registry-login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
-              registry-username: ${{ secrets.REGISTRY_UASERNAME }}
-              registry-password: ${{ secrets.REGISTRY_PASSWORD }}
-              name: blog.lazarodm.com.br
-              location: 'brazil south'
+        uses: 'azure/aci-deploy@v1'
+        with:
+          resource-group: ${{ secrets.RESOURCE_GROUP }}
+          dns-name-label: 'blog' 
+          image: ${{ secrets.REGISTRY_LOGIN_SERVER }}/blog:${{ github.sha }}
+          registry-login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
+          registry-username: ${{ secrets.REGISTRY_UASERNAME }}
+          registry-password: ${{ secrets.REGISTRY_PASSWORD }}
+          name: blog.lazarodm.com.br
+          location: 'brazil south'
     
   post-deploy:
     runs-on: ubuntu-latest
