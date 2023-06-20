@@ -40,7 +40,7 @@ jobs:
         uses: 'azure/aci-deploy@v1'
         with:
           resource-group: ${{ secrets.RESOURCE_GROUP }}
-          dns-name-label: blog 
+          dns-name-label: larazodm-blog
           image: ${{ secrets.REGISTRY_LOGIN_SERVER }}/blog:${{ github.sha }}
           registry-login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
           registry-username: ${{ secrets.REGISTRY_UASERNAME }}
