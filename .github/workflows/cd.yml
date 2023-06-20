@@ -45,7 +45,7 @@ jobs:
           registry-login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
           registry-username: ${{ secrets.REGISTRY_UASERNAME }}
           registry-password: ${{ secrets.REGISTRY_PASSWORD }}
-          name: blog.lazarodm.com.br
+          name: blog-container-group
           location: 'brazil south'
     
   post-deploy:
