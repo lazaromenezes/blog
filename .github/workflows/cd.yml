@@ -43,7 +43,7 @@ jobs:
           dns-name-label: larazodm-blog
           image: ${{ secrets.REGISTRY_LOGIN_SERVER }}/blog:${{ github.sha }}
           registry-login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
-          registry-username: ${{ secrets.REGISTRY_UASERNAME }}
+          registry-username: ${{ secrets.REGISTRY_USERNAME }}
           registry-password: ${{ secrets.REGISTRY_PASSWORD }}
           name: blog-container-group
           location: 'brazil south'
