@@ -1,0 +1,25 @@
+#!/bin/bash
+
+IMAGE=hugomods/hugo
+
+function create_post () {
+  POST_FILE="./content/$1/posts/$2.md"
+
+  docker run -v .:/src $IMAGE new $POST_FILE
+
+  sudo chown $USER:$USER $POST_FILE
+
+  echo "Post file created at $POST_FILE"
+}
+
+if [ ! $1 ]; then
+  echo "No file informed"
+  echo "Usage: new-post post-file-name"
+else
+  echo "Creating post files"
+  
+  create_post 'pt-br' $1
+  create_post 'en' $1
+
+  sudo rm .hugo_build.lock
+fi
