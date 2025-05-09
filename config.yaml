@@ -2,10 +2,12 @@ baseURL: http://www.lazarodm.com.br/
 theme: ananke
 MetaDataFormat: yaml
 SectionPagesMenu: main
-Paginate: 10
 googleAnalytics: UA-163694959-1
 enableRobotsTXT: true
 disqusShortName: lazarodm
+
+pagination:
+  pagerSize: 10
 
 markup:
   goldmark:

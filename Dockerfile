@@ -1,10 +1,10 @@
-FROM klakegg/hugo as builder
+FROM hugomods/hugo as builder
 
 COPY . /src
 
 RUN HUGO_ENV="production" hugo
 
-FROM nginx:1.16.0-alpine
+FROM nginx:latest-alpine
 
 COPY env/config/nginx.conf /etc/nginx/conf.d/default.conf
 
