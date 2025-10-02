@@ -1,18 +1,17 @@
 ---
-author: Lázaro Menezes
-date: "2020-04-13T21:07:12-03:00"
-draft: false
 title: How did I setup Continuous Delivery for this blog...
-description: ...or "Killing a fly with a cannon"
+author: Lázaro Menezes
+draft: false
 disable_share: false
-tags: 
-    - Continuous Delivery
-    - DevOps
+toc: false
+date: 2020-04-13T21:07:00
+tags:
+  - Continuous Delivery
+  - DevOps
 featured_image: images/delivery-cartoon.svg
 featured_image_credits: "['File:Delivery and Shipping Guys Cartoon.svg'](https://commons.wikimedia.org/w/index.php?curid=69760875) by [Free Clip Art](https://vectortoons.com/free-stuff/) is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0?ref=ccsearch&atype=html')"
-toc: false
+description: ...or "Killing a fly with a cannon"
 ---
-
 This blog never had a lot of content, or no content at all, to be honest. The main reason is that I spend all of my time playing around with setups, tools, templates and anything else instead of actually wrinting.
 
 In one of these quests I decided to study some new tools and experiment with other technologies. My goal was to make this blog to be updated as I complete a pull request to its [repository](https://github.com/lazaromenezes/blog) in a given branch. An usual continuous delivery use case.
@@ -44,7 +43,7 @@ The base image is an [NGINX](https://www.nginx.com/) image, later, a config file
 sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/conf.d/default.conf
 ```
 
-This piece replaces the token *$PORT* inside the config file for the *$PORT* environment variable value that exists in the container host.
+This piece replaces the token _$PORT_ inside the config file for the _$PORT_ environment variable value that exists in the container host.
 
 ## .travis.yml
 
@@ -79,7 +78,7 @@ script:
 - HUGO_ENV=PRODUCTION hugo
 ```
 
-Here the site is built. The ```HUGO_ENV``` variable indicate to Hugo that this is a production build, so some additional adjustments are done, like enabling Google Analytics.
+Here the site is built. The \`\`\`HUGO_ENV\`\`\` variable indicate to Hugo that this is a production build, so some additional adjustments are done, like enabling Google Analytics.
 
 ```yaml
 after_success:
@@ -98,7 +97,7 @@ env:
   global:
   - secure: Vfyhyx(...)7GdA=
   - secure: j0/2IZ(...)ZjKY=
-  ```
+```
 
 Well, it's all folks! When everything happens without any errors, anytime a new code is merged into the master branch, in a couple of minutes the image is running in Herok and the new content is live.
 

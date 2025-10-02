@@ -1,0 +1,100 @@
+backend:
+  repo: lazaromenezes/blog
+  name: github
+
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+
+publish_mode: 'simple'
+
+editor:
+  preview: false
+
+collections:
+  - name: 'blog_ptbr'
+    label: 'Portuguese posts'
+    folder: 'content/pt-br/posts'
+    create: true
+    preview_path: 'posts/{{slug}}'
+    identifier_field: title
+    fields:
+    - name: title
+      label: Title
+    - name: author
+      label: Author
+      widget: string
+      default: "Lázaro Menezes"
+      required: false
+    - name: draft
+      default: false
+      widget: boolean
+    - name: disable_share
+      default: false
+      widget: boolean
+    - name: toc
+      default: true
+      widget: boolean
+    - name: date
+      widget: datetime
+      default: '{{now}}'
+    - name: tags
+      widget: list
+      required: false
+    - name: featured_image
+      widget: image
+      required: false
+    - name: featured_image_credits
+      widget: string
+      required: false
+    - name: description
+      widget: text
+      required: false
+    - name: body
+      widget: markdown
+      required: true
+  - name: 'blog_en'
+    label: 'English posts'
+    folder: 'content/en/posts'
+    create: true
+    preview_path: 'en/posts/{{slug}}'
+    identifier_field: title
+    fields:
+      - name: title
+        label: Title
+      - name: author
+        label: Author
+        widget: string
+        default: "Lázaro Menezes"
+        required: false
+      - name: draft
+        default: false
+        widget: boolean
+      - name: disable_share
+        default: false
+        widget: boolean
+      - name: toc
+        default: true
+        widget: boolean
+      - name: date
+        widget: datetime
+        default: '{{now}}'
+      - name: tags
+        widget: list
+        required: false
+      - name: featured_image
+        widget: image
+        required: false
+      - name: featured_image_credits
+        widget: string
+        required: false
+      - name: description
+        widget: text
+        required: false
+      - name: body
+        widget: markdown
+        required: true
+
+media_folder: "static/images"
+public_folder: "/images"
