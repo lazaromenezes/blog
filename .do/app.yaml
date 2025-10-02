@@ -1,0 +1,27 @@
+alerts:
+- rule: DEPLOYMENT_FAILED
+- rule: DOMAIN_FAILED
+domains:
+- domain: www.lazarodm.com.br
+  type: PRIMARY
+- domain: lazarodm.com.br
+  type: ALIAS
+features:
+- buildpack-stack=ubuntu-22
+ingress:
+  rules:
+  - component:
+      name: blog
+    match:
+      path:
+        prefix: /
+name: blog
+region: nyc
+static_sites:
+- environment_slug: html
+  github:
+    branch: master
+    deploy_on_push: false
+    repo: lazaromenezes/blog
+  name: blog
+  source_dir: /public/
