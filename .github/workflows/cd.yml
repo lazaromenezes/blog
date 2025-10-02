@@ -5,9 +5,10 @@ on:
     branches:
       - master 
 
+if: false
+
 jobs:
   build:
-    if: false
     runs-on: ubuntu-latest
     steps:
       - name: Code checkout
