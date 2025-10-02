@@ -3,7 +3,7 @@ name: Blog CD
 on:
   push:
     branches:
-      - master 
+      - main 
 
 permissions:
   contents: read
@@ -20,7 +20,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.119.0'
+          hugo-version: 'latest'
           extended: true
 
       - name: Build
