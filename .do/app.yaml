@@ -24,4 +24,5 @@ static_sites:
     deploy_on_push: false
     repo: lazaromenezes/blog
   name: blog
-  source_dir: /public/
+  source_dir: /
+  build_command: rm -f ./public && hugo -d public --minify

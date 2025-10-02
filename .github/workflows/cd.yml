@@ -17,17 +17,10 @@ jobs:
         with:
           submodules: true
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v3
-        with:
-          hugo-version: 'latest'
-          extended: true
-
-      - name: Build
-        run: hugo --minify -d public
-
       - name: Deploy to Digital Ocean
         uses: digitalocean/app_action/deploy@v2
+        env:
+          HUGO_EXTENDED: 1
         with:
            token: ${{ secrets.DO_ACCESS_TOKEN }}
            project_id: ${{ secrets.DO_PROJECT_ID }}
