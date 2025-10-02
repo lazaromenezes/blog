@@ -19,8 +19,12 @@ name: blog
 region: nyc
 static_sites:
 - environment_slug: html
+  envs:
+  - key: HUGO_EXTENDED
+    scope: BUILD_TIME
+    value: 1
   github:
-    branch: master
+    branch: main
     deploy_on_push: false
     repo: lazaromenezes/blog
   name: blog
