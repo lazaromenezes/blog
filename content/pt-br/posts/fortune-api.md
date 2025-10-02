@@ -14,7 +14,7 @@ featured_image: images/fortune-api/fortune-cookie.jpg
 featured_image_credits: "[Food photo created by Racool_studio - www.freepik.com](https://www.freepik.com/photos/food)"
 ---
 
-Quando criei meu [perfil dinamico]({{<ref "/post/playing-with-github-profile">}}) no GitHub, usei uma API de terceiros para gerar mensagens aleatórias, ou biscoitos da sorte, mas esta APi parou de funcionar, quebrando uma das funcionalidades do perfil. Então resolvi escrever uma nova.
+Quando criei meu [perfil dinamico]({{<ref "./playing-with-github-profile">}}) no GitHub, usei uma API de terceiros para gerar mensagens aleatórias, ou biscoitos da sorte, mas esta APi parou de funcionar, quebrando uma das funcionalidades do perfil. Então resolvi escrever uma nova.
 
 ## A ideia
 

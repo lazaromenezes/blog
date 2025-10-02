@@ -14,7 +14,7 @@ featured_image_credits: "[Food photo created by Racool_studio - www.freepik.com]
 toc: true
 ---
 
-When I first created my dynamic [Github Profile]({{<ref "/post/playing-with-github-profile">}}) I was using a third party API for getting random messages, aka fortune cookies, but this API suddenly stopped working, breaking the profile. So I decided to write one!
+When I first created my dynamic [Github Profile]({{<ref "./playing-with-github-profile">}}) I was using a third party API for getting random messages, aka fortune cookies, but this API suddenly stopped working, breaking the profile. So I decided to write one!
 
 ## The idea
 
