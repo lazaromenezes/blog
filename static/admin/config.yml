@@ -1,6 +1,7 @@
 backend:
   repo: lazaromenezes/blog
   name: github
+  branch: main
 
 slug:
   encoding: "ascii"
