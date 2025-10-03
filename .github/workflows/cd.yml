@@ -33,4 +33,4 @@ jobs:
     steps:
       - name: Dispatch repository upload
         run: |
-          curl --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' -X POST -d '{"event_type":"blog_deployed"}' https://api.github.com/repos/lazaromenezes/lazaromenezes/dispatches
+          curl --header 'authorization: Bearer ${{ secrets.GH_ACCESS_TOKEN }}' -X POST -d '{"event_type":"blog_deployed"}' https://api.github.com/repos/lazaromenezes/lazaromenezes/dispatches
