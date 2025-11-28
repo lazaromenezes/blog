@@ -7,14 +7,15 @@ tags:
 - Gamedev
 - CI/CD
 - Devops
-- Continuous Integration
+- Integração contínua
+- Entrega contínua
 - Godot
 - Indie
 - Itch.io
 - Github
 - Actions
 featured_image: images/godot-build-pipeline/overblown.gif
-featured_image_credits: "[Made by @tumati for the game 'Overblown' we worked together](http://tumati.itch.io/)"
+featured_image_credits: "[Feita pelo @tumati para o jogo 'Overblown' que fizemos](http://tumati.itch.io/)"
 ---
 
 ## Introdução
@@ -29,11 +30,11 @@ Se ainda não tem a sua página do jogo criada, dê uma pausa e crie a página, 
 
 ![05]
 
-Neste momento não é necessário fazer nenhum _upload_ agora, apenas configure o essencial, como escolher se o jogo será somente download ou web, por exemplo, pois o _deploy_ será feito com uma ferramenta disponibilizada pelo itch.io chamada [butler](https://itch.io/docs/butler/). 
+Neste momento não é necessário fazer nenhum _upload_, apenas configure o essencial, como escolher se o jogo será somente download ou web, por exemplo, pois o _deploy_ será feito com uma ferramenta disponibilizada pelo itch.io chamada [butler](https://itch.io/docs/butler/). 
 
 O _butler_ é uma ferramenta de linha de comando para interagir com o itch.io realizando pequenas tarefas, como _upload_ de _builds_. Mas como o _butler_ acessa a sua página? Através de uma chave de API. 
 
-#### Congiturando uma Chave de API no itch.io
+#### Criando uma Chave de API no itch.io
 
 Para criar uma chave de API - _API key_ - na itch, basta seguir os passos a seguir
 
@@ -47,7 +48,7 @@ Em seguida, no fim do menu lateral, ache a opção _API Keys_
 
 Nesta tela, você poderá ver todas as chaves já criadas, quando foram criadas e também cancelar - botão _Revoke_ - estas chaves caso necessário, por exemplo, se uma vazar. 
 
-É aqui também que novas chaves são criadas, para isso somente clique no botão _Generate new API key`.
+É aqui também que novas chaves são criadas, para isso somente clique no botão _Generate new API key_.
 
 ![03]
 
